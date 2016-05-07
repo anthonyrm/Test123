@@ -1,0 +1,10 @@
+Integracion_v1/server :
+npm install
+npm install sails-mysql
+(* cambiar la conexion en config/connections)
+sails lift
+
+
+Integracion_v1/app:
+npm install
+ionic server
