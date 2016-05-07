@@ -3,9 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic']);
+//var app = angular.module('starter', ['ionic']);
+angular.module('starter', ['ionic','starter.controllers'])
 
-app.run(function($ionicPlatform) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,18 +22,39 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-});
-
-app.controller('customersCtrl', function($scope, $http) {
-
-    $http.get("http://localhost:1337/user")
-	    .success(function(data, status, headers, config) {
-      console.log('success', status, data);
-       $scope.names = data;
+})
+//no blank
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider){
+  $stateProvider
+    .state('page1',{
+      url: "/page1",
+      templateUrl:'templates/page1.html'
+    })
+    .state('page2',{
+      url:"/page2",
+      templateUrl: 'templates/page2.html',
+      controller: 'customersCtrl'
+      
+    })
     
-      console.log($scope.names[0]);
-  })   
-  .error(function(data, status, headers, config) {
-      console.log('error', status, data);
-    });
-});
+    $urlRouterProvider.otherwise('/page1');
+    //$ionicConfigProvider.views.swipeBackEnabled(false);
+})
+//no blank
+//.controller('customersCtrl', function($scope, $http) {
+
+ //   $http.get("http://localhost:1337/user")
+	//    .success(function(data, status, headers, config) {
+  //    console.log('success', status, data);
+  //     $scope.names = data;
+    
+  //    console.log($scope.names[0]);
+  //})   
+  //.error(function(data, status, headers, config) {
+  //    console.log('error', status, data);
+  //  });
+    
+    
+    
+//})
+;
