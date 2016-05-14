@@ -7,4 +7,9 @@ sails lift
 
 Integracion_v1/app:
 npm install
-ionic server
+ionic serve
+
+ionic serve --address ip
+ionic run android --address ip
+you are not logged in: You are not logged in please log in and try again
+setup a CORS proxy service

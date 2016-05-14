@@ -24,7 +24,7 @@ angular.module('starter', ['ionic','starter.controllers'])
   });
 })
 //no blank
-.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider){
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider,$httpProvider){
   $stateProvider
     .state('page1',{
       url: "/page1",
@@ -39,6 +39,9 @@ angular.module('starter', ['ionic','starter.controllers'])
     
     $urlRouterProvider.otherwise('/page1');
     //$ionicConfigProvider.views.swipeBackEnabled(false);
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    
 })
 //no blank
 //.controller('customersCtrl', function($scope, $http) {
