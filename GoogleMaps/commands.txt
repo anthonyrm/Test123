@@ -1,0 +1,25 @@
+
+*ionic start ionic-maps blank
+*npm install -g gulp
+(cd ionic-maps)
+*ionic setup sass
+*ionic platform add ios
+*ionic platform add android
+*bower install ngCordova (usar ngCordova plugin)
+*cordova plugin add cordova-plugin-geolocation (antes hacer npm install -g cordova)
+
+(Generamos el API KEY https://console.developers.google.com/apis/library)
+(ejemplo AIzaSyCZDy1VibHycbHrlm8TVst4o06N_pB2GKs )
+(Agregamos los siguiente JS al index.html)
+<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+<script src="http://maps.google.com/maps/api/js?key=YOUR_API_KEY_GOES_HERE&sensor=true"></script>
+
+(Creamos una carpeta "templates" en www/)
+(Creamos un archivo html "map.html" dentro de la carpeta templates)
+(Para correr el proyecto en el emulador, se debe prender el GPS)
+
+
+
+
+
