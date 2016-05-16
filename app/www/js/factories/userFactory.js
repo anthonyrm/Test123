@@ -1,13 +1,13 @@
 angular.module('starter.factories', [])
 .factory('userFactory', function($http, $q) {
- 
+
  var users = [];
- 
+
   return {
 		getUsers: function(){
             var defered = $q.defer();
             var promise = defered.promise;
-			 $http.get("http://192.168.1.40:1337/user")
+			 $http.get("http://192.168.1.38:1337/user")
                 .success(function(data){
                     defered.resolve(data);
                 })
@@ -17,5 +17,5 @@ angular.module('starter.factories', [])
              return promise;
         }
   }
-  
+
 });
