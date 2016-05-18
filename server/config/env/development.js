@@ -16,7 +16,7 @@ module.exports = {
    * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
-proxyHost: '192.168.1.38',
+proxyHost: '192.168.1.37',
 proxyPort: 1337
   // models: {
   //   connection: 'someMongodbServer'

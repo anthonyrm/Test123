@@ -34,7 +34,11 @@ angular.module('starter', ['ionic','starter.controllers','starter.factories'])
       url:"/page2",
       templateUrl: 'templates/page2.html',
       controller: 'customersCtrl'
-      
+    })
+    .state('page3',{
+      url:"/page3",
+      templateUrl: 'templates/page3.html',
+      controller: 'parkingCtrl'
     })
     
     $urlRouterProvider.otherwise('/page1');

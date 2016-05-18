@@ -7,7 +7,7 @@ angular.module('starter.factories', [])
 		getUsers: function(){
             var defered = $q.defer();
             var promise = defered.promise;
-			 $http.get("http://192.168.1.38:1337/user")
+			 $http.get("http://192.168.1.37:1337/user")
                 .success(function(data){
                     defered.resolve(data);
                 })
