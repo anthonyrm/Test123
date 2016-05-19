@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers')
 .controller('customersCtrl', function($scope,$http,$rootScope,$state,userFactory) {
     
     $scope.load = function(){

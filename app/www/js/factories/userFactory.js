@@ -1,5 +1,5 @@
-angular.module('starter.factories', [])
-.factory('userFactory', function($http, $q) {
+angular.module('starter.factories')
+.factory('userFactory', ['$http', '$q', 'ApiEndpoint', function($http, $q, ApiEndpoint) {
 
  var users = [];
 
@@ -7,7 +7,7 @@ angular.module('starter.factories', [])
 		getUsers: function(){
             var defered = $q.defer();
             var promise = defered.promise;
-			 $http.get("http://192.168.1.37:1337/user")
+			 $http.get(ApiEndpoint.url + "/user")
                 .success(function(data){
                     defered.resolve(data);
                 })
@@ -18,4 +18,4 @@ angular.module('starter.factories', [])
         }
   }
 
-});
+}]);

@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers')
 .controller('parkingCtrl', function($scope,$http,$rootScope,$state, parkingFactory) {
     
     $scope.load = function(){

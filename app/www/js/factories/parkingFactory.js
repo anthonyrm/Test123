@@ -1,11 +1,10 @@
-angular.module('starter.factories', [])
-.factory('parkingFactory', function($http, $q) {
-
+angular.module('starter.factories')
+.factory('parkingFactory', ['$http', '$q', 'ApiEndpoint',function($http, $q, ApiEndpoint) {
   return {
 		getInfo: function(id){
             var defered = $q.defer();
             var promise = defered.promise;
-			 $http.get("http://192.168.1.37:1337/parking/getInfo?id=" + id)
+			 $http.get(ApiEndpoint.url + "/parking/getInfo?id=" + id)
                 .success(function(data){
                     defered.resolve(data);
                 })
@@ -16,4 +15,4 @@ angular.module('starter.factories', [])
         }
   }
 
-});
+}]);
